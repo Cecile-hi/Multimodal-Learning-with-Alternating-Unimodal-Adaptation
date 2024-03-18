@@ -25,44 +25,62 @@ This optimization process is controlled by a gradient modification mechanism to 
 
 ### News
 1. We have released some checkpoints trained by MLA. You could find them on [here].(https://zenodo.org/records/10828670).
-### For training on CREMA-D with audio-video modalities:  
-#### Normal
+
+### Step 1. Environment Creation
+You can use the following commands to create your environment:
+1. conda create -n MLA --python 3.8
+2. pip install -r requirements.txt
+### Step 2. Data Preparation
+1. Download your Dataset.
+2. Data Pre-processing
+   1. You can convert mp4 file to wav audio using data/mp4_to_wav.py.
+      1. Then extract acoustic fbank feature using data/extract_fbank.py 
+      2. or spectrum feature using data/extract_spec.py
+   2. You can extract textual token using data/extract_token.py
+   3. You can process and extract visual feature using data/video_preprocessing.py
+3. Generate datalist
+   1. Using data/gen_stat.py to create label list
+   2. Using data/gen_{dataset_name}_txt to create data list
+### Step 3. Training
+#### For training on CREMA-D with audio-video modalities:  
+##### Normal
 ```
   python main.py --train --ckpt_path ckpt --gpu_ids 0 --batch_size 64 --lorb base --modulation Normal --epochs 100 --dataset CREMAD
 ```
-#### OGM (-GE)
+##### OGM (-GE)
 ```
   python main.py --train --ckpt_path ckpt --gpu_ids 0 --batch_size 64 --lorb base --modulation OGM (-GE) --epochs 100 --dataset CREMAD
 ```
-#### QMF
+##### QMF
 ```
   python main.py --train --ckpt_path ckpt --gpu_ids 0 --batch_size 64 --lorb base --modulation QMF --epochs 100 --dataset CREMAD
 ```
-#### MLA (fixed fusion)
+##### MLA (fixed fusion)
 ```
   python main.py --train --ckpt_path ckpt --gpu_ids 0 --batch_size 64 --lorb base --modulation Normal --epochs 100 --dataset CREMAD --gs_flag
 ```
-#### MLA (dynamic fusion)
+##### MLA (dynamic fusion)
 ```
   python main.py --train --ckpt_path ckpt --gpu_ids 0 --batch_size 64 --lorb base --modulation Normal --epochs 100 --dataset CREMAD --gs_flag -dynamic
 ```
-### For training on Food-101 (MVSA) with video-text modalities:
+#### For training on Food-101 (MVSA) with video-text modalities:
 Sames as the command of CREMA-D, with a few change.
 For example:
-#### MLA (dynamic fusion)
+##### MLA (dynamic fusion)
 ```
   python main.py --train --ckpt_path ckpt --gpu_ids 0 --batch_size 64 --lorb m3ae --modulation Normal --epochs 100 --dataset Food101 (MVSA) --gs_flag -dynamic
 ```
-### For training on IEMOCAP with audio-video-text modalities:
+#### For training on IEMOCAP with audio-video-text modalities:
 Sames as the command of CREMA-D, with a few change.
 For example:
-#### MLA (dynamic fusion)
+##### MLA (dynamic fusion)
 ```
   python main.py --train --ckpt_path ckpt --gpu_ids 0 --batch_size 64 --lorb m3ae --modulation Normal --epochs 100 --dataset IEMOCAP --gs_flag -dynamic --modal3
 ```
-### Training using CLIP feature
+#### Training using CLIP feature
 Comming soon...
-### Evaluating on a specific dataset (e.g. CREMA-D):
+### Setp 4. Evaluation
+#### Evaluating on a specific dataset (e.g. CREMA-D):
 ```
   python main.py --ckpt_path ckpt_path --gpu_ids 0 --batch_size 64 --lorb base --modulation Normal --dataset CREMAD (--gs_flag)
 ```
