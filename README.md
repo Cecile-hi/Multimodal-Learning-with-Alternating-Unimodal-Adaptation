@@ -28,19 +28,19 @@ This optimization process is controlled by a gradient modification mechanism to 
 
 ### Step 1. Environment Creation
 You can use the following commands to create your environment:
-1. conda create -n MLA --python 3.8
-2. pip install -r requirements.txt
+1. ``conda create -n MLA --python 3.8``
+2. ``pip install -r requirements.txt``
 ### Step 2. Data Preparation
 1. Download your Dataset.
 2. Data Pre-processing
-   1. You can convert mp4 file to wav audio using data/mp4_to_wav.py.
-      1. Then extract acoustic fbank feature using data/extract_fbank.py 
-      2. or spectrum feature using data/extract_spec.py
-   2. You can extract textual token using data/extract_token.py
-   3. You can process and extract visual feature using data/video_preprocessing.py
+   1. You can convert mp4 file to wav audio using ``python data/mp4_to_wav.py``.
+      1. Then extract acoustic fbank feature using ``python data/extract_fbank.py`` 
+      2. or spectrum feature using ``python data/extract_spec.py``.
+   2. You can extract textual token using ``python data/extract_token.py``.
+   3. You can process and extract visual feature using ``python data/video_preprocessing.py``.
 3. Generate datalist
-   1. Using data/gen_stat.py to create label list
-   2. Using data/gen_{dataset_name}_txt to create data list
+   1. Using ``python data/gen_stat.py`` to create label list
+   2. Using ``python data/gen_{dataset_name}_txt.py`` to create data list
 ### Step 3. Training
 #### For training on CREMA-D with audio-video modalities:  
 ##### Normal
