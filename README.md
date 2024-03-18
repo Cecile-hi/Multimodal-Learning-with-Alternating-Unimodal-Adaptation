@@ -24,7 +24,7 @@ This optimization process is controlled by a gradient modification mechanism to 
 <!-- <img src="./subspaces.jpg" width="50%"> -->
 
 ### News
-1. We have released some checkpoints trained by MLA. You could find them on [here].(https://zenodo.org/records/10828670).
+1. We have released some checkpoints trained by MLA. You could find them on [here](https://zenodo.org/records/10828670).
 
 ### Step 1. Environment Creation
 You can use the following commands to create your environment:
