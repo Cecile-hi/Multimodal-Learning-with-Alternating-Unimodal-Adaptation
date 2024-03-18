@@ -29,7 +29,7 @@ class GSPlugin():
         if train_exp_counter != 0:
             for n, w in model.named_parameters():
 
-                if n == "module.weight" or n == "weight":
+                if n == "module.weight":
 
                     r = torch.mean(before_batch_input, 0, True)
                     k = torch.mm(self.Pl, torch.t(r))

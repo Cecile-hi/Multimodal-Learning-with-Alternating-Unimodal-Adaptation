@@ -70,7 +70,7 @@ class AVClassifier(nn.Module):
 
             return a_out, v_out
 
-        if not self.args.ewc_flag and not self.args.gs_flag:
+        if not self.args.gs_flag:
             a, v, out = self.fusion_module(a, v)
             return a, v, out
         
@@ -92,7 +92,7 @@ class CAVClassifier(nn.Module):
         if fusion == 'sum':
             self.fusion_module = SumFusion(output_dim=n_classes)
         elif fusion == 'concat':
-            if args.ewc_flag or args.gs_flag:
+            if args.gs_flag:
                 self.fusion_module = ConcatFusion(input_dim = 768, output_dim=n_classes)
             else:
                 self.fusion_module = ConcatFusion(input_dim = 1536, output_dim=n_classes)
@@ -213,7 +213,7 @@ class Modal3Classifier(nn.Module):
         if fusion == 'sum':
             self.fusion_module = SumFusion(output_dim=n_classes)
         elif fusion == 'concat':
-            if args.ewc_flag or args.gs_flag:
+            if args.gs_flag:
                 # self.fusion_module = ConcatFusion(input_dim = 384, output_dim=n_classes)
                 self.fusion_module = ConcatFusion3(input_dim = 768, output_dim=n_classes)
                 # self.fusion_module = ConcatFusion(input_dim = 1024, output_dim=n_classes)
@@ -296,7 +296,7 @@ class CLIPClassifier(nn.Module):
         if fusion == 'sum':
             self.fusion_module = SumFusion(output_dim=n_classes)
         elif fusion == 'concat':
-            if args.ewc_flag or args.gs_flag:
+            if args.gs_flag:
                 self.fusion_module = ConcatFusion(input_dim = 512, output_dim=n_classes)
             else:
                 self.fusion_module = ConcatFusion(input_dim = 1024, output_dim=n_classes)

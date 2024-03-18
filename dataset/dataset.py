@@ -28,72 +28,30 @@ class AVDataset(Dataset):
             self.data_root = '/data1/zhangxiaohui/k400/'
             self.visual_feature_path = os.path.join(self.data_root, "kinsound/visual/", '{}_imgs/Image-01-FPS/'.format(mode))
             self.audio_feature_path = os.path.join(self.data_root, "kinsound/audio/", '{}_fbank/'.format(mode))
-            self.stat_path = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/stat_ks.txt"
-            if args.mask_percent == 0.05:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_ks_5.txt"
-            elif args.mask_percent == 0.1:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_ks_10.txt"
-            elif args.mask_percent == 0.2:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_ks_20.txt"
-            elif args.mask_percent == 0.3:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_ks_30.txt"
-            elif args.mask_percent == 0.4:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_ks_40.txt"
-            elif args.mask_percent == 0.5:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_ks_50.txt"
-            elif args.mask_percent == 0.6:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_ks_60.txt"
-            elif args.mask_percent == 0.7:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_ks_70.txt"
-            elif args.mask_percent == 0.8:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_ks_80.txt"
-            elif args.mask_percent == 0.9:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_ks_90.txt"
-            else:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_ks.txt"
-            self.test_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_test_ks.txt"
+            self.stat_path = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/stat_ks.txt"
+            self.train_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_train_ks.txt"
+            self.test_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_test_ks.txt"
         elif args.dataset == "AVE":
             self.data_root = '/data1/zhangxiaohui/AVE_Dataset/'
             self.visual_feature_path = os.path.join(self.data_root, "AVE/visual/", '{}_imgs/Image-01-FPS/'.format(mode))
             self.audio_feature_path = os.path.join(self.data_root, "AVE/audio/", '{}_fbank/'.format(mode))
-            self.stat_path = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/stat_ave.txt"
-            self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_ave.txt"
-            self.test_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_test_ave.txt"
+            self.stat_path = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/stat_ave.txt"
+            self.train_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_train_ave.txt"
+            self.test_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_test_ave.txt"
         elif args.dataset == "RAVDESS":
             self.data_root = '/data1/zhangxiaohui/RAVDESS/'
             self.visual_feature_path = os.path.join(self.data_root, "visual/", '{}_imgs/Image-01-FPS/'.format(mode))
             self.audio_feature_path = os.path.join(self.data_root, "audio/", '{}_fbank/'.format(mode))
-            self.stat_path = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/stat_rav.txt"
-            self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_rav.txt"
-            self.test_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_test_rav.txt"
+            self.stat_path = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/stat_rav.txt"
+            self.train_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_train_rav.txt"
+            self.test_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_test_rav.txt"
         elif args.dataset == "CREMAD":
             self.data_root = '/data1/zhangxiaohui/CREMA-D/'
             self.visual_feature_path = os.path.join(self.data_root, "visual/", '{}_imgs/Image-01-FPS/'.format(mode))
             self.audio_feature_path = os.path.join(self.data_root, "audio/", '{}_fbank/'.format(mode))
-            self.stat_path = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/stat_cre.txt"
-            if args.mask_percent == 0.05:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_cre_5.txt"
-            elif args.mask_percent == 0.1:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_cre_10.txt"
-            elif args.mask_percent == 0.2:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_cre_20.txt"
-            elif args.mask_percent == 0.3:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_cre_30.txt"
-            elif args.mask_percent == 0.4:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_cre_40.txt"
-            elif args.mask_percent == 0.5:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_cre_50.txt"
-            elif args.mask_percent == 0.6:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_cre_60.txt"
-            elif args.mask_percent == 0.7:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_cre_70.txt"
-            elif args.mask_percent == 0.8:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_cre_80.txt"
-            elif args.mask_percent == 0.9:
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_cre_90.txt"
-            else:    
-                self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_cre.txt"
-            self.test_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_test_cre.txt"
+            self.stat_path = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/stat_cre.txt"
+            self.train_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_train_cre.txt"
+            self.test_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_test_cre.txt"
 
 
         # with open(self.stat_path) as f1:
@@ -214,30 +172,30 @@ class CAVDataset(Dataset):
             self.data_root = '/data1/zhangxiaohui/k400/'
             self.visual_feature_path = os.path.join(self.data_root, "kinsound/visual/", '{}_imgs/Image-01-FPS/'.format(mode))
             self.audio_feature_path = os.path.join(self.data_root, "kinsound/audio/", '{}_fbank/'.format(mode))
-            self.stat_path = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/stat_ks.txt"
-            self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_ks.txt"
-            self.test_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_test_ks.txt"
+            self.stat_path = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/stat_ks.txt"
+            self.train_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_train_ks.txt"
+            self.test_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_test_ks.txt"
         elif args.dataset == "AVE":
             self.data_root = '/data1/zhangxiaohui/AVE_Dataset/'
             self.visual_feature_path = os.path.join(self.data_root, "AVE/visual/", '{}_imgs/Image-01-FPS/'.format(mode))
             self.audio_feature_path = os.path.join(self.data_root, "AVE/audio/", '{}_fbank/'.format(mode))
-            self.stat_path = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/stat_ave.txt"
-            self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_ave.txt"
-            self.test_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_test_ave.txt"
+            self.stat_path = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/stat_ave.txt"
+            self.train_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_train_ave.txt"
+            self.test_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_test_ave.txt"
         elif args.dataset == "RAVDESS":
             self.data_root = '/data1/zhangxiaohui/RAVDESS/'
             self.visual_feature_path = os.path.join(self.data_root, "visual/", '{}_imgs/Image-01-FPS/'.format(mode))
             self.audio_feature_path = os.path.join(self.data_root, "audio/", '{}_fbank/'.format(mode))
-            self.stat_path = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/stat_rav.txt"
-            self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_rav.txt"
-            self.test_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_test_rav.txt"
+            self.stat_path = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/stat_rav.txt"
+            self.train_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_train_rav.txt"
+            self.test_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_test_rav.txt"
         elif args.dataset == "CREMAD":
             self.data_root = '/data1/zhangxiaohui/CREMA-D/'
             self.visual_feature_path = os.path.join(self.data_root, "visual/", '{}_imgs/Image-01-FPS/'.format(mode))
             self.audio_feature_path = os.path.join(self.data_root, "audio/", '{}_fbank/'.format(mode))
-            self.stat_path = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/stat_cre.txt"
-            self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_cre.txt"
-            self.test_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_test_cre.txt"
+            self.stat_path = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/stat_cre.txt"
+            self.train_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_train_cre.txt"
+            self.test_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_test_cre.txt"
 
         with open(self.stat_path, "r") as f1:
             classes = f1.readlines()
@@ -379,23 +337,23 @@ class M3AEDataset(Dataset):
             self.data_root = '/data1/zhangxiaohui/food101/'
             self.visual_feature_path = os.path.join(self.data_root, "visual", '{}_imgs/'.format(mode))
             self.text_feature_path = os.path.join(self.data_root, "text_token", '{}_token/'.format(mode))
-            self.stat_path = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/stat_food.txt"
-            self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_food.txt"
-            self.test_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_test_food.txt"
+            self.stat_path = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/stat_food.txt"
+            self.train_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_train_food.txt"
+            self.test_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_test_food.txt"
         elif args.dataset == "MVSA":
             self.data_root = '/data1/zhangxiaohui/MVSA_Single/'
             self.visual_feature_path = os.path.join(self.data_root, "visual", '{}_imgs/'.format(mode))
             self.text_feature_path = os.path.join(self.data_root, "text_token", '{}_token/'.format(mode))
-            self.stat_path = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/stat_mvsa.txt"
-            self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_mvsa.txt"
-            self.test_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_test_mvsa.txt"
+            self.stat_path = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/stat_mvsa.txt"
+            self.train_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_train_mvsa.txt"
+            self.test_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_test_mvsa.txt"
         elif args.dataset == "CUB":
             self.data_root = '/data1/zhangxiaohui/CUB_200_2011/'
             self.visual_feature_path = os.path.join(self.data_root, "visual", '{}_imgs/'.format(mode))
             self.text_feature_path = os.path.join(self.data_root, "text_token", '{}_token/'.format(mode))
-            self.stat_path = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/stat_cub.txt"
-            self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_cub.txt"
-            self.test_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_test_cub.txt"
+            self.stat_path = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/stat_cub.txt"
+            self.train_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_train_cub.txt"
+            self.test_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_test_cub.txt"
 
         with open(self.stat_path, "r") as f1:
             classes = f1.readlines()
@@ -533,16 +491,16 @@ class TVDataset(Dataset):
             self.data_root = '/data1/zhangxiaohui/k400/'
             self.visual_feature_path = os.path.join(self.data_root, "kinsound/visual/", '{}_imgs/Image-01-FPS/'.format(mode))
             self.audio_feature_path = os.path.join(self.data_root, "kinsound/audio/", '{}_fbank/'.format(mode))
-            self.stat_path = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/stat_ks.txt"
-            self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_ks.txt"
-            self.test_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_test_ks.txt"
+            self.stat_path = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/stat_ks.txt"
+            self.train_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_train_ks.txt"
+            self.test_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_test_ks.txt"
         elif args.dataset == "MVSA":
             self.data_root = '/data1/zhangxiaohui/MVSA_Single/'
             self.visual_feature_path = os.path.join(self.data_root, "visual", '{}_imgs/'.format(mode))
             self.text_feature_path = os.path.join(self.data_root, "text_token", '{}_token/'.format(mode))
-            self.stat_path = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/stat_mvsa.txt"
-            self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_mvsa.txt"
-            self.test_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_test_mvsa.txt"
+            self.stat_path = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/stat_mvsa.txt"
+            self.train_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_train_mvsa.txt"
+            self.test_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_test_mvsa.txt"
 
 
         with open(self.stat_path, "r") as f1:
@@ -695,9 +653,9 @@ class Modal3Dataset(Dataset):
             self.visual_feature_path = os.path.join(self.data_root, "visual", '{}_imgs/'.format(mode))
             self.text_feature_path = os.path.join(self.data_root, "text_token", '{}_token/'.format(mode))
             self.audio_feature_path = os.path.join(self.data_root, "audio", '{}_fbank/'.format(mode))
-            self.stat_path = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/stat_iemo.txt"
-            self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_iemo.txt"
-            self.test_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_test_iemo.txt"
+            self.stat_path = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/stat_iemo.txt"
+            self.train_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_train_iemo.txt"
+            self.test_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_test_iemo.txt"
 
         with open(self.stat_path, "r") as f1:
             classes = f1.readlines()
@@ -857,9 +815,9 @@ class CLIPDataset(Dataset):
             self.data_root = '/data1/zhangxiaohui/food101/clip_feature/'
             self.visual_feature_path = os.path.join(self.data_root, "image", '{}/'.format(mode))
             self.text_feature_path = os.path.join(self.data_root, "text", '{}/'.format(mode))
-            self.stat_path = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/stat_food.txt"
-            self.train_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_train_food.txt"
-            self.test_txt = "/data1/zhangxiaohui/OGM-GE/data/VGGSound/my_test_food.txt"
+            self.stat_path = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/stat_food.txt"
+            self.train_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_train_food.txt"
+            self.test_txt = "/data1/zhangxiaohui/Multimodal-Learning-Adaptation/data/my_test_food.txt"
 
         with open(self.stat_path, "r") as f1:
             classes = f1.readlines()

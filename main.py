@@ -732,8 +732,6 @@ def main(av_alpha = 0.5):
     model = torch.nn.DataParallel(model, device_ids=gpu_ids)
 
     model.cuda()
-    
-    # pdb.set_trace()
 
     if args.lorb == "large" and args.cav_opti:
         # optimizer = optim.SGD(model.module.fusion_module.fc_out.parameters(), lr=args.learning_rate, momentum=0.9, weight_decay=1e-4)
@@ -818,7 +816,7 @@ def main(av_alpha = 0.5):
     test_dataloader = DataLoader(test_dataset, batch_size=args.batch_size,
                                  shuffle=False, num_workers=32, pin_memory=True)
     # GS Plugin
-    gs = GSPlugin if args.gs_flag else None
+    gs = GSPlugin() if args.gs_flag else None
 
     if args.modulation == "QMF":
         txt_history = History(len(train_dataloader.dataset))

@@ -1,6 +1,6 @@
 # Multimodal Learning with Alternating Unimodal Adaptation
 
-This is the official project of the Multimodal Learning with Alternating Unimodal Adaptation (MLA) method proposed by our paper titled 'Multimodal representation learning by alternating unimodal adaptation' published on the 40th The IEEE / CVF Computer Vision and Pattern Recognition Conference (CVPR 2024) (https://arxiv.org/pdf/2311.10707.pdf).
+This is the official project of the Multimodal Learning with Alternating Unimodal Adaptation (MLA) method proposed by our paper titled 'Multimodal representation learning by alternating unimodal adaptation' [paper](https://arxiv.org/pdf/2311.10707.pdf) published on the 40th The IEEE / CVF Computer Vision and Pattern Recognition Conference (CVPR 2024).
 
 ## Citation
 
@@ -23,6 +23,8 @@ This optimization process is controlled by a gradient modification mechanism to 
 
 <!-- <img src="./subspaces.jpg" width="50%"> -->
 
+### News
+1. We have released some checkpoints trained by MLA. You could find them on [here].(https://zenodo.org/records/10828670).
 ### For training on CREMA-D with audio-video modalities:  
 #### Normal
 ```
@@ -60,3 +62,7 @@ For example:
 ```
 ### Training using CLIP feature
 Comming soon...
+### Evaluating on a specific dataset (e.g. CREMA-D):
+```
+  python main.py --ckpt_path ckpt_path --gpu_ids 0 --batch_size 64 --lorb base --modulation Normal --dataset CREMAD (--gs_flag)
+```
