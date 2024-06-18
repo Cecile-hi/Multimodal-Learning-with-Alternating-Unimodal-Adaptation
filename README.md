@@ -6,11 +6,13 @@ This is the official project of the Multimodal Learning with Alternating Unimoda
 
 If you find this toolkit useful, please consider citing following papers.
 ```
-@article{zhang2023multimodal,
-  title={Multimodal representation learning by alternating unimodal adaptation},
-  author={Zhang, Xiaohui and Yoon, Jaehong and Bansal, Mohit and Yao, Huaxiu},
-  journal={arXiv preprint arXiv:2311.10707},
-  year={2023}
+@InProceedings{Zhang_multimodal,
+    author    = {Zhang, Xiaohui and Yoon, Jaehong and Bansal, Mohit and Yao, Huaxiu},
+    title     = {Multimodal Representation Learning by Alternating Unimodal Adaptation},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {27456-27466}
 }
 
 ```
